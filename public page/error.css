@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #0D0D0D;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.error-container {
+    position: relative;
+    padding: 60px 40px;
+    background: rgba(13, 13, 13, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    z-index: 2;
+    max-width: 600px;
+    width: 90%;
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.error-code {
+    font-size: 8em;
+    font-weight: 900;
+    color: #4CAF50;
+    margin-bottom: 20px;
+    animation: glitch 3s infinite;
+    text-shadow: 0 0 20px rgba(76, 175, 80, 0.4);
+}
+
+.error-message {
+    font-size: 2em;
+    color: #ffffff;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.error-description {
+    color: #cccccc;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #4CAF50, #81C784);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4);
+}
+
+.background-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, #2C5530 0%, transparent 25%),
+        radial-gradient(circle at 80% 80%, #1A4D33 0%, transparent 25%);
+    opacity: 0.7;
+    animation: backgroundPulse 8s ease-in-out infinite alternate;
+    z-index: 1;
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: rgba(76, 175, 80, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.particle:nth-child(1) { left: 10%; top: 15%; animation: floatParticle 20s infinite linear; }
+.particle:nth-child(2) { left: 20%; top: 45%; animation: floatParticle 25s infinite linear 2s; }
+.particle:nth-child(3) { left: 35%; top: 25%; animation: floatParticle 22s infinite linear 1s; }
+.particle:nth-child(4) { left: 45%; top: 65%; animation: floatParticle 28s infinite linear 3s; }
+.particle:nth-child(5) { left: 55%; top: 35%; animation: floatParticle 23s infinite linear 4s; }
+.particle:nth-child(6) { left: 65%; top: 55%; animation: floatParticle 24s infinite linear 2s; }
+.particle:nth-child(7) { left: 75%; top: 85%; animation: floatParticle 21s infinite linear 1s; }
+.particle:nth-child(8) { left: 80%; top: 15%; animation: floatParticle 26s infinite linear 3s; }
+.particle:nth-child(9) { left: 85%; top: 45%; animation: floatParticle 27s infinite linear 2s; }
+.particle:nth-child(10) { left: 90%; top: 25%; animation: floatParticle 29s infinite linear 4s; }
+.particle:nth-child(11) { left: 15%; top: 75%; animation: floatParticle 23s infinite linear 1s; }
+.particle:nth-child(12) { left: 25%; top: 85%; animation: floatParticle 25s infinite linear 3s; }
+.particle:nth-child(13) { left: 40%; top: 95%; animation: floatParticle 22s infinite linear 2s; }
+.particle:nth-child(14) { left: 50%; top: 5%; animation: floatParticle 24s infinite linear 1s; }
+.particle:nth-child(15) { left: 70%; top: 65%; animation: floatParticle 26s infinite linear 4s; }
+
+@keyframes floatParticle {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(100px, 50px) scale(1.2);
+    }
+    50% {
+        transform: translate(0, 100px) scale(1);
+    }
+    75% {
+        transform: translate(-100px, 50px) scale(0.8);
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+.particle:hover, .particles:hover .particle {
+    background: rgba(76, 175, 80, 0.8);
+    width: 8px;
+    height: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.4);
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 0 0 20px rgba(76, 175, 80, 0.4);
+        transform: translateX(0);
+    }
+    20% {
+        text-shadow: -3px 0 red, 3px 0 #4CAF50;
+        transform: translateX(-2px);
+    }
+    25% {
+        text-shadow: 3px 0 red, -3px 0 #4CAF50;
+        transform: translateX(2px);
+    }
+    30% {
+        text-shadow: 0 0 20px rgba(76, 175, 80, 0.4);
+        transform: translateX(0);
+    }
+}
+
+@keyframes backgroundPulse {
+    0% { opacity: 0.5; }
+    100% { opacity: 0.7; }
+}
