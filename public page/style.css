@@ -237,3 +237,77 @@ h1 {
         grid-template-columns: 1fr;
     }
 }
+
+
+
+/* error css donw there */
+
+.error-container {
+    position: relative;
+    padding: 60px 40px;
+    background: rgba(13, 13, 13, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    z-index: 2;
+    max-width: 600px;
+    width: 90%;
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.error-code {
+    font-size: 8em;
+    font-weight: 900;
+    color: #4CAF50;
+    margin-bottom: 20px;
+    animation: glitch 3s infinite;
+    text-shadow: 0 0 20px rgba(76, 175, 80, 0.4);
+}
+
+.error-message {
+    font-size: 2em;
+    color: #ffffff;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.error-description {
+    color: #cccccc;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #4CAF50, #81C784);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4);
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 0 0 20px rgba(76, 175, 80, 0.4);
+        transform: translateX(0);
+    }
+    20% {
+        text-shadow: -3px 0 red, 3px 0 #4CAF50;
+        transform: translateX(-2px);
+    }
+    25% {
+        text-shadow: 3px 0 red, -3px 0 #4CAF50;
+        transform: translateX(2px);
+    }
+    30% {
+        text-shadow: 0 0 20px rgba(76, 175, 80, 0.4);
+        transform: translateX(0);
+    }
+}
